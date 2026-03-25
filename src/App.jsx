@@ -1,15 +1,18 @@
-import './App.css'
-
-function Greeting({ name, age }) {
-  return <h1>Hello, I am {name}, i am {age} years old!</h1>
-}
+import './App.css';
+import { useState } from "react";
 
 function App() {
-  const showGreeting = false;
+  const [name, setName] = useState('');
+
+  function handleChange(event) {
+    const value = event.target.value;
+    setName(value);
+  }
+
   return (
     <div>
-      <button>Click Me</button>
-      {showGreeting && <Greeting name={"Thai"} age={29} />}
+      <input type='text' placeholder='Name...' onChange={handleChange} />
+      {name}
     </div>
   )
 }
