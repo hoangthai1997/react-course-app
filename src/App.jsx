@@ -1,6 +1,6 @@
 import './App.css'
 
-function Greeting({name, age}) {
+function Greeting({ name, age }) {
   return <h1>Hello, I am {name}, i am {age} years old!</h1>
 }
 
@@ -8,7 +8,8 @@ function App() {
   const showGreeting = false;
   return (
     <div>
-      <Greeting name={"Thai"} age={29} />
+      <button>Click Me</button>
+      {showGreeting && <Greeting name={"Thai"} age={29} />}
     </div>
   )
 }
