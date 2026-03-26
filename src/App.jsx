@@ -1,18 +1,29 @@
 import './App.css';
 import { useState } from "react";
 
-function App() {
-  const [name, setName] = useState('');
-
-  function handleChange(event) {
-    const value = event.target.value;
-    setName(value);
-  }
+function TodoList() {
+  const todos = [
+    {id: 1, text: "Learn JSX"},
+    {id: 2, text: "Understand props"},
+    {id: 3, text: "Master state & events"},
+  ];
 
   return (
     <div>
-      <input type='text' placeholder='Name...' onChange={handleChange} />
-      {name}
+      <h2>My React Todos</h2>
+      <ul>
+        {todos.map((todo) => (
+          <li key={todo.id}>{todo.text}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <div>
+      <TodoList />
     </div>
   )
 }
